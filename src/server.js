@@ -1,5 +1,6 @@
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
+require('dotenv').config()
 
 
 const app = express();
@@ -9,4 +10,4 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 })
 
-app.listen(3000)
+app.listen(process.env.PORT)
