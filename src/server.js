@@ -1,6 +1,7 @@
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
 import initWebRoute from './route/web'
+import initAPIRoute from './route/api'
 
 require('dotenv').config()
 
@@ -15,6 +16,9 @@ configViewEngine(app);
 
 //init Web Route
 initWebRoute(app);
+
+//init API Route
+initAPIRoute(app);
 
 
 app.listen(process.env.PORT)
