@@ -35,7 +35,7 @@
             <% for(let i=0; i < dataUser.length; i++) { %>
                 <tr>
                     <th scope="row">
-                        <%= i %>
+                        <%= dataUser[i].id %>
                     </th>
                     <td>
                         <%= dataUser[i].firstname %>
@@ -52,6 +52,30 @@
                 <% } %>
         </tbody>
     </table>
+
+    <div class="mx-auto w-50 border rounded">
+        <form action="create-new-user" method="post">
+            <h2 class="text-center my-2">CREATE A NEW USER</h2>
+            <div class="mt-3 px-2 w-75 mx-auto">
+                <label for="firstname" class="form-label">Firstname</label>
+                <input class="form-control" type="text" name="fname" placeholder="Enter your firstname">
+            </div>
+
+            <div class="mt-3 px-2 w-75 mx-auto">
+                <label for="lastname" class="form-label">Lastname</label>
+                <input class="form-control" type="text" name="lname" placeholder="Enter your lastname">
+            </div>
+
+            <div class="mt-3 px-2 w-75 mx-auto">
+                <label for="address" class="form-label">Address</label>
+                <input class="form-control" type="text" name="address" placeholder="Enter your address">
+            </div>
+
+            <div class="text-center my-2">
+                <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
