@@ -43,10 +43,18 @@
                     <td>
                         <%= dataUser[i].lastname %>
                     </td>
-                    <td>
+                    <td class="d-flex">
                         <a href="/detail/user/<%= dataUser[i].id %>" class="btn btn-outline-success">Detail</a>
-                        <a href="" class="btn btn-outline-primary">Edit</a>
-                        <a href="" class="btn btn-outline-danger">Delete</a>
+
+                        <form action="edit-user" method="post" class="mx-2">
+                            <input type="hidden" name="userID" value="<%= dataUser[i].id %>">
+                            <button class="btn btn-outline-primary">Edit</button>
+                        </form>
+
+                        <form action="delete-user" method="post">
+                            <input type="hidden" name="userID" value="<%= dataUser[i].id %>">
+                            <button class="btn btn-outline-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 <% } %>
